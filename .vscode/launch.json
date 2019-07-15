@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        
+        {
+            "name": "(gdb) Launch",                
+            "type": "cppdbg",                         
+            "request": "launch",                        
+            "targetArchitecture": "x86",                
+            // "program": "${workspaceRoot}\\${fileBasenameNoExtension}.exe", 
+            "program": "${command:cmake.launchTargetPath}",                
+            "miDebuggerPath":"C:\\MinGw\\bin\\gdb.exe", 
+            "args": [],    
+            "environment": [], 
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "stopAtEntry": true,      // false            
+            "cwd": "${workspaceRoot}",                  
+            "externalConsole": false,  //  true 
+            "MIMode": "gdb",    
+            // "preLaunchTask": "g++"　
+            // "preLaunchTask": "compile"　                  
+            }
+    ]
+ }
+ 
