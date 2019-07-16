@@ -86,90 +86,156 @@ enum FilterCfgIndex {
 // the following configures structs are constructed for little endian system
 // 0x200
 struct RadarCfg {
-    uint64_t reserved_1         :8;
-    uint64_t RCS_Threshold_valid:1;
-    uint64_t RCS_Threshold      :3;
-    uint64_t reserved_2         :4;
-    uint64_t CtrlRelay_valid    :1;
-    uint64_t CtrlRelay          :1;
-    uint64_t SendQuality        :1;
-    uint64_t SendExtInfo        :1;
-    uint64_t SortIndex          :3;
-    uint64_t StoreInNVM         :1;
-    uint64_t SensorID           :3;
-    uint64_t OutputType         :2;
-    uint64_t RadarPower         :3;
-    uint64_t reserved_3         :14;
-    uint64_t MaxDistance        :10;
-    uint64_t MaxDistance_valid  :1;
-    uint64_t SensorID_valid     :1;
-    uint64_t RadarPower_valid   :1;
-    uint64_t OutputType_valid   :1;
-    uint64_t SendQuality_valid  :1;
-    uint64_t SendExtInfo_valid  :1;
-    uint64_t SortIndex_valid    :1;
-    uint64_t StoreInNVM_valid   :1;
+    RadarCfg& operator=(const RadarCfg& from){ 
+        data64 = from.data64;
+        return  *this;
+    }
+    union {
+        uint64_t data64;
+        struct {
+            uint64_t reserved_1         :8;
+            uint64_t RCS_Threshold_valid:1;
+            uint64_t RCS_Threshold      :3;
+            uint64_t reserved_2         :4;
+            uint64_t CtrlRelay_valid    :1;
+            uint64_t CtrlRelay          :1;
+            uint64_t SendQuality        :1;
+            uint64_t SendExtInfo        :1;
+            uint64_t SortIndex          :3;
+            uint64_t StoreInNVM         :1;
+            uint64_t SensorID           :3;
+            uint64_t OutputType         :2;
+            uint64_t RadarPower         :3;
+            uint64_t reserved_3         :14;
+            uint64_t MaxDistance        :10;
+            uint64_t MaxDistance_valid  :1;
+            uint64_t SensorID_valid     :1;
+            uint64_t RadarPower_valid   :1;
+            uint64_t OutputType_valid   :1;
+            uint64_t SendQuality_valid  :1;
+            uint64_t SendExtInfo_valid  :1;
+            uint64_t SortIndex_valid    :1;
+            uint64_t StoreInNVM_valid   :1;
+        };
+    };
+
 } ;
 // 0x202
 struct FilterCfg {
-    uint64_t reserved_1         :32;
-    uint64_t Max                :12;
-    uint64_t reserved_2         :4;
-    uint64_t Min                :12;
-    uint64_t reserved_3         :5;
-    uint64_t Valid              :1;
-    uint64_t Active             :1;
-    uint64_t Index              :4;
-    uint64_t Type               :1;
+    FilterCfg& operator=(const FilterCfg& from){ 
+        data64 = from.data64;
+        return  *this;
+    }
+    union {
+        uint64_t data64;
+        struct {
+            uint64_t reserved_1         :32;
+            uint64_t Max                :12;
+            uint64_t reserved_2         :4;
+            uint64_t Min                :12;
+            uint64_t reserved_3         :5;
+            uint64_t Valid              :1;
+            uint64_t Active             :1;
+            uint64_t Index              :4;
+            uint64_t Type               :1;
+        };
+    };
+
 } ;
 // 0x202
 struct FilterCfgX {
-    uint64_t reserved_1         :32;
-    uint64_t Max                :13;
-    uint64_t reserved_2         :3;
-    uint64_t Min                :13;
-    uint64_t reserved_3         :4;
-    uint64_t Valid              :1;
-    uint64_t Active             :1;
-    uint64_t Index              :4;
-    uint64_t Type               :1;
+    FilterCfgX& operator=(const FilterCfgX& from){ 
+        data64 = from.data64;
+        return  *this;
+    }
+    union {
+        uint64_t data64;
+        struct {
+            uint64_t reserved_1         :32;
+            uint64_t Max                :13;
+            uint64_t reserved_2         :3;
+            uint64_t Min                :13;
+            uint64_t reserved_3         :4;
+            uint64_t Valid              :1;
+            uint64_t Active             :1;
+            uint64_t Index              :4;
+            uint64_t Type               :1;
+        };
+    };
+
 } ;
 // 0x600
 struct Cluster_0_Status {
-    uint64_t reserved_1         :36;
-    uint64_t InterfaceVersion   :4;
-    uint64_t MeasCounter        :16;
-    uint64_t NofClustersFar     :8;
-    uint64_t NofClustersNear    :8;
+    Cluster_0_Status& operator=(const Cluster_0_Status& from){ 
+        data64 = from.data64;
+        return  *this;
+    }
+    union {
+        uint64_t data64;
+        struct {
+            uint64_t reserved_1         :36;
+            uint64_t InterfaceVersion   :4;
+            uint64_t MeasCounter        :16;
+            uint64_t NofClustersFar     :8;
+            uint64_t NofClustersNear    :8;
+        };
+    };
+
 } ;
 // 0x701
 struct Cluster_1_General {
-    uint64_t RCS                :8;
-    uint64_t DynProp            :3;
-    uint64_t reserved_1         :2;
-    uint64_t VrelLat            :9;
-    uint64_t VrelLong           :10;
-    uint64_t DistLat            :10;
-    uint64_t reserved_2         :1;
-    uint64_t Cluster_DistLong   :13;
-    uint64_t ID                 :8;
+    Cluster_1_General& operator=(const Cluster_1_General& from){ 
+        data64 = from.data64;
+        return  *this;
+    }
+    union {
+        uint64_t data64;
+        struct {
+            uint64_t RCS                :8;
+            uint64_t DynProp            :3;
+            uint64_t reserved_1         :2;
+            uint64_t VrelLat            :9;
+            uint64_t VrelLong           :10;
+            uint64_t DistLat            :10;
+            uint64_t reserved_2         :1;
+            uint64_t Cluster_DistLong   :13;
+            uint64_t ID                 :8;
+        };
+    };
+
 } ;
 
 // 0x702
 struct Cluster_2_Quality {
-    uint64_t reserved_1         :32;
-    uint64_t AmbigState         :3;
-    uint64_t InvalidState       :5;
-    uint64_t Pdh0               :3;
-    uint64_t reserved_2         :1;
-    uint64_t VrelLat_rms        :5;
-    uint64_t VrelLong_rms       :5;
-    uint64_t DistLat_rms        :5;
-    uint64_t DistLong_rms       :5;
-    uint64_t ID                 :8;
+    Cluster_2_Quality& operator=(const Cluster_2_Quality& from){ 
+        data64 = from.data64;
+        return  *this;
+    }
+    union {
+        uint64_t data64;
+        struct {
+            uint64_t reserved_1         :32;
+            uint64_t AmbigState         :3;
+            uint64_t InvalidState       :5;
+            uint64_t Pdh0               :3;
+            uint64_t reserved_2         :1;
+            uint64_t VrelLat_rms        :5;
+            uint64_t VrelLong_rms       :5;
+            uint64_t DistLat_rms        :5;
+            uint64_t DistLong_rms       :5;
+            uint64_t ID                 :8;
+        };
+    };
+
 } ;
 
 struct Frame {
+    Frame(){}
+    Frame(Frame& from) : data64(from.data64){}
+    Frame& operator=(const Frame& from){ 
+        data64 = from.data64;
+        return  *this;
+    }
     union {
         RadarCfg            RadarCfg;
         FilterCfg           FilterCfg;
@@ -180,7 +246,7 @@ struct Frame {
         
         uint8_t             data8[8];
         uint32_t            data32[2];
-        uint64_t            data64[1];
+        uint64_t            data64;
     };
 } ;
 

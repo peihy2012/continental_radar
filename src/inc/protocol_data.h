@@ -16,12 +16,12 @@ public:
     ProtocolData(const RawData data);
     ProtocolData(const RawData data, size_t size);
     ~ProtocolData();
-    virtual ProtocolData<RawData>& init(const RawData data, size_t size) = 0;
-    virtual size_t read(const RawData data, size_t size) = 0;
-    virtual size_t write(const RawData data, size_t size) = 0;
-    virtual size_t parse() = 0;
+    // virtual ProtocolData<RawData>& init(const RawData data, size_t size) = 0;
+    virtual size_t read_from(const RawData data, size_t size) ;
+    virtual size_t write_to(RawData data, size_t size) ;
+    virtual size_t parse() ;
     // virtual ProtocolData<RawData>& data() = 0;
-    virtual void clear() = 0; 
+    virtual void clear() ; 
 };
 
 // template<typename T>

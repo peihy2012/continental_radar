@@ -32,7 +32,8 @@
         "optional": "cpp",
         "sstream": "cpp",
         "tuple": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "deque": "cpp"
     },
     "cmake.cmakePath": "C:\\CMake\\bin\\cmake"
 }
